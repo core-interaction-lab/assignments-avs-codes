@@ -1,0 +1,44 @@
+html, body {
+    min-height: 100%;
+}
+
+body {
+    background: url() center center no-repeat;
+    background-position: center center;
+    background-repeat: repeat;
+    height: 100vh;
+    margin: 0;
+    background-size: cover;
+}
+
+.content {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.call-to-action {
+    text-align: center;
+}
+
+.call-to-action h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+.call-to-action a {
+    background: white;
+    padding: 1rem;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 750px) {
+    .call-to-action h1 {
+        font-size: 80px;
+    }
+}
