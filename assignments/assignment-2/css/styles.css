@@ -1,0 +1,166 @@
+body {
+    font-family: 'Montserrat', serif;
+	background-color: hsl(0,14%,1%);
+	color: #eeeeee;
+	font-weight: 300;
+	box-sizing: border-box;
+	line-height: 1.4
+}
+
+header {
+	display: flex;
+	align-items: center ;
+	padding-top: 1vw;
+	padding-bottom: 1vw;
+}
+
+header a {
+	align-self: center;
+}
+
+.logo {
+	font-weight: 900;
+	font-size: 15vw;
+	text-align: center;
+	line-height: 0.7;
+}
+
+.logo--mini {
+	font-size: 2vw;
+	margin-left: 58%;
+}
+
+main {
+	width: fit-content;
+	margin-left: 8vw;
+	margin-right: 8vw;
+}
+	
+.main__text {
+	width: 60%;
+}
+
+.tagline {
+	text-align: center;
+	font-style: italic;
+	flex-direction: column;
+}
+
+a {
+	text-decoration: none;
+	color: #eeeeee;
+	cursor: pointer;
+}
+
+a h1 {
+	display: inline;
+}
+
+.sign {
+	height: fit-content;
+	padding: 4vw;
+}
+
+.sign--green {
+	background-color: #8BBC74;
+}
+
+.sign__text {
+	color: hsl(0,14%,1%);
+	font-weight: 900;
+	font-size: 1000%;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+
+nav a .sign__text {
+	font-size: 200%;
+}
+
+nav a .sign {
+	padding: 2vw;
+	cursor: pointer;
+	margin-top: 1vw;
+	margin-bottom: 1vw;
+}
+
+.menu__open {
+	border: 1px solid #eeeeee;
+	padding: .5vw;
+	font-weight: 900;
+	cursor: pointer;
+}
+
+.menu__close {
+	border: 1px solid #eeeeee;
+	padding: .5vw;
+	font-weight: 900;
+	cursor: pointer;
+	margin: 1vw;
+	margin-left: 89%;
+}
+
+.menu {
+	visibility: hidden;
+	position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 0;
+    background-color: rgb(39, 39, 39);
+	transition: 0.5s all ease;
+	overflow: auto;
+	-ms-overflow-style: none; 
+	scrollbar-width: none; 
+	padding: .5vw; 
+	padding-top: 2vw;
+}
+
+.menu::-webkit-scrollbar {
+	display: none;
+}	
+
+.active {
+	visibility: visible;
+	width: 35vw;
+}
+
+.sign--mask {
+	background-color: rgba(167, 167, 167, 0.212);
+}
+.nav-wrapper {
+	display: flex;
+	justify-content: space-around;
+	font-size: 1.5vw;
+	font-weight: 700;
+}
+
+@media (max-width: 600px) {
+	.active {
+		visibility: visible;
+		width:100vw;
+	}
+
+	main {
+		margin-left: 2vw;
+		margin-right: 2vw;
+		width: auto;
+	}
+
+	.main__text {
+		width: 100%;
+	}
+
+	.sign__text{
+		font-size: 300%;
+	}
+  }
+
+@media (min-width: 900px) {
+	.active {
+		visibility: visible;
+		width:20vw;
+	}
+
+  }
