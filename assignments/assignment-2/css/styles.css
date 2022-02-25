@@ -1,7 +1,7 @@
 body {
     font-family: 'Montserrat', serif;
 	background-color: hsl(0,14%,1%);
-	color: #eeeeee;
+	color: hsl(0, 0%, 93%);
 	font-weight: 300;
 	box-sizing: border-box;
 	line-height: 1.4
@@ -48,7 +48,7 @@ main {
 
 a {
 	text-decoration: none;
-	color: #eeeeee;
+	color: hsl(0, 0%, 93%);
 	cursor: pointer;
 }
 
@@ -62,7 +62,7 @@ a h1 {
 }
 
 .sign--green {
-	background-color: #8BBC74;
+	background-color: hsl(101, 35%, 60%);
 }
 
 .sign__text {
@@ -86,14 +86,14 @@ nav a .sign {
 }
 
 .menu__open {
-	border: 1px solid #eeeeee;
+	border: 1px solid hsl(0, 0%, 93%);;
 	padding: .5vw;
 	font-weight: 900;
 	cursor: pointer;
 }
 
 .menu__close {
-	border: 1px solid #eeeeee;
+	border: 1px solid hsl(0, 0%, 93%);
 	padding: .5vw;
 	font-weight: 900;
 	cursor: pointer;
@@ -108,7 +108,7 @@ nav a .sign {
     left: 0;
     height: 100vh;
     width: 0;
-    background-color: rgb(39, 39, 39);
+    background-color: hsl(0, 0%, 15%);
 	transition: 0.5s all ease;
 	overflow: auto;
 	-ms-overflow-style: none; 
@@ -127,7 +127,8 @@ nav a .sign {
 }
 
 .sign--mask {
-	background-color: rgba(167, 167, 167, 0.212);
+	background-color: hsl(0, 0%, 65%);
+	opacity: 0.212;
 }
 .nav-wrapper {
 	display: flex;
