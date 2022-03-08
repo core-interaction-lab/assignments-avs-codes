@@ -85,7 +85,7 @@ a h1 {
 	height: fit-content;
 	padding: 4vw;
 	margin-bottom: 40vw;
-	margin-top: 6vw;	
+	margin-top: 3vw;	
 	filter: blur(1.9vw);
 	transition: all 0.6s;
 }
@@ -98,9 +98,83 @@ nav .sign {
 	filter: blur(0);
 }
 
-.sign--green {
-	background-color: hsl(101, 35%, 60%);
+/* Gradients acquired from: cssgradient.io, webgradients.com, and gradienthunt.com */
+
+.sign--narrator {
+	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
+
+.sign--guy1 {
+	background-image: linear-gradient(147deg, #aa0720 0%, #FF2525 91%);
+
+}
+
+.sign--guy2 {
+	background-image: linear-gradient(to right, #942037 6%, #b8235a 29%, #801357 51%, #3d1635 84%, #432146 100%);
+}
+
+.sign--guy3 {
+	background: linear-gradient(to left, #1F1C18, #8E0E00);
+}
+
+.sign--guy4 {
+	background-image: radial-gradient( circle 603px at 32.8% 51%,  rgba(253,185,51,1) 0%, rgba(253,211,117,1) 90.3% );
+}
+
+.sign--guy5 {
+	background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,152,155,1) 0.1%, rgba(0,94,120,1) 94.2% );
+}
+
+.sign--guy6 {
+	background-image: linear-gradient(-225deg, #D4FFEC 0%, #57F2CC 48%, #4596FB 100%);
+}
+
+.sign--guy7 {
+	background-image: radial-gradient( circle farthest-corner at 5.3% 17.2%,  rgba(255,208,253,1) 0%, rgba(255,237,216,1) 90% );
+}
+
+.sign--guy8 {
+	background: linear-gradient(to bottom, #61045F, #AA076B);
+
+}
+
+.sign--guy9 {
+	background: radial-gradient( circle 935px at 3.1% 5.8%,  rgba(182,255,139,1) 0%, rgba(8,88,127,1) 100.2% );
+}
+
+.sign--guy10 {
+	background-image: radial-gradient( circle 603px at 32.8% 51%,  rgba(253,185,51,1) 0%, rgba(253,211,117,1) 90.3% );
+}
+
+.sign--guy11 {
+	background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}
+
+.sign--guy12 {
+	background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(100,130,159,1) 0%, rgba(103,56,96,1) 90% );
+}
+
+.sign--guy13 {
+	background-image: linear-gradient(27deg, #FAD961 0%, #F76B1C 100%);
+}
+
+.sign--guy14 {
+	background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(226,37,37,1) 0%, rgba(211,49,49,1) 82.8% );
+}
+
+.sign--guy15 {
+	background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);
+}
+
+.sign--guy16 {
+	background-image: radial-gradient( circle 879px at 10.4% 22.3%,  rgba(255,235,238,1) 0%, rgba(186,190,245,1) 93.6% );
+}
+
+.sign--guy17 {
+	background-image: linear-gradient(45deg, #FFDEE9 0%, #B5FFFC 100%);
+}
+
+
 
 .sign__text {
 	color: hsl(0,14%,1%);
@@ -108,8 +182,15 @@ nav .sign {
 	font-size: 1000%;
 	margin-top: 0;
 	margin-bottom: 0;
+	line-height: 1;
 }
 
+.sign--mini-text {
+	font-size: 300%;
+	font-weight: 700;
+	margin-top: 2vw;
+	text-align: right;
+}
 
 nav a .sign__text {
 	font-size: 200%;
@@ -148,8 +229,7 @@ nav a .sign {
 	overflow: auto;
 	-ms-overflow-style: none; 
 	scrollbar-width: none; 
-	padding: .5vw; 
-	padding-top: 2vw;
+	padding-top: 1vw;
 	z-index: 1;
 }
 
@@ -163,8 +243,13 @@ nav a .sign {
 }
 
 .sign--mask {
-	background-color: hsl(0, 0%, 65%);
-	opacity: 0.212;
+	opacity: 0.4;
+}
+
+.sign--mask:hover {
+	opacity: 1;
+	padding: 3vw 2vw;
+	font-size: 125%;
 }
 .nav-wrapper {
 	display: flex;
@@ -209,6 +294,12 @@ nav a .sign {
 	.active {
 		visibility: visible;
 		width:20vw;
+	}
+
+	main {
+		margin-left: 2vw;
+		margin-right: 2vw;
+		width: auto;
 	}
 
   }
