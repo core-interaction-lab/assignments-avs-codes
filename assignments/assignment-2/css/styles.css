@@ -18,11 +18,34 @@ header a {
 	align-self: center;
 }
 
+.start {
+	display: flex;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1vw 3vw;
+	margin-top: 6vw;;
+}
+
+.start:hover {
+	background-color: hsl(100, 29%, 38%);
+}
+
+.start__text {
+	color: hsl(0,14%,1%);
+	font-weight: 900;
+	font-size: 250%;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .logo {
 	font-weight: 900;
 	font-size: 15vw;
 	text-align: center;
-	line-height: 0.7;
+	line-height: 0.2;
 }
 
 .logo--mini {
@@ -38,6 +61,8 @@ main {
 	
 .main__text {
 	width: 60%;
+	margin-bottom: 2.25vw;
+	text-align: justify;
 }
 
 .tagline {
@@ -59,6 +84,18 @@ a h1 {
 .sign {
 	height: fit-content;
 	padding: 4vw;
+	margin-bottom: 40vw;
+	margin-top: 6vw;	
+	filter: blur(1.9vw);
+	transition: all 0.6s;
+}
+
+nav .sign {
+	filter: blur(0);
+}
+
+.sign:hover {
+	filter: blur(0);
 }
 
 .sign--green {
@@ -86,14 +123,12 @@ nav a .sign {
 }
 
 .menu__open {
-	border: 1px solid hsl(0, 0%, 93%);;
 	padding: .5vw;
 	font-weight: 900;
 	cursor: pointer;
 }
 
 .menu__close {
-	border: 1px solid hsl(0, 0%, 93%);
 	padding: .5vw;
 	font-weight: 900;
 	cursor: pointer;
@@ -115,6 +150,7 @@ nav a .sign {
 	scrollbar-width: none; 
 	padding: .5vw; 
 	padding-top: 2vw;
+	z-index: 1;
 }
 
 .menu::-webkit-scrollbar {
@@ -151,11 +187,22 @@ nav a .sign {
 
 	.main__text {
 		width: 100%;
+		margin-bottom: 8vw;
 	}
 
 	.sign__text{
 		font-size: 300%;
 	}
+
+	.sign {
+		margin-bottom: 140vw;
+		margin-top: 6vw;
+	}
+
+	.logo--mini {
+		font-size: 6vw;
+	}
+
   }
 
 @media (min-width: 900px) {
