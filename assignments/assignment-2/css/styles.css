@@ -45,16 +45,25 @@ header a {
 	font-weight: 900;
 	font-size: 15vw;
 	text-align: center;
-	line-height: 0.2;
 }
 
 .logo--mini {
 	font-size: 2vw;
-	margin-left: 58%;
+	margin-left: 8vw;
+}
+
+.logo--mini:hover {
+	text-decoration: underline	solid hsl(0, 0%, 71%);
+	color: hsl(0, 0%, 71%);
+}
+
+.logo--starter {
+	font-size: 2vw;
+	margin-left: 8vw;
 }
 
 main {
-	width: fit-content;
+	width: auto;
 	margin-left: 8vw;
 	margin-right: 8vw;
 }
@@ -84,7 +93,7 @@ a h1 {
 .sign {
 	height: fit-content;
 	padding: 4vw;
-	margin-bottom: 40vw;
+	margin-bottom: 30vw;
 	margin-top: 3vw;	
 	filter: blur(1.9vw);
 	transition: all 0.6s;
@@ -96,6 +105,10 @@ nav .sign {
 
 .sign:hover {
 	filter: blur(0);
+}
+
+.sign--green {
+	background-color: hsl(100, 27%, 53%);
 }
 
 /* Gradients acquired from: cssgradient.io, webgradients.com, and gradienthunt.com */
@@ -210,6 +223,9 @@ nav a .sign {
 	padding: .5vw;
 	font-weight: 900;
 	cursor: pointer;
+	font-size: 3vw;
+	position: fixed;
+	left: 2vw;
 }
 
 .menu__close {
@@ -218,6 +234,15 @@ nav a .sign {
 	cursor: pointer;
 	margin: 1vw;
 	margin-left: 89%;
+	font-size: 3vw;
+}
+
+.menu__open:hover {
+	color: hsl(0, 0%, 71%);
+}
+
+.menu__close:hover {
+	color: hsl(0, 0%, 71%);
 }
 
 .menu {
@@ -254,12 +279,63 @@ nav a .sign {
 	padding: 3vw 2vw;
 	font-size: 125%;
 }
+
 .nav-wrapper {
 	display: flex;
 	justify-content: space-around;
-	font-size: 1.5vw;
+	font-size: 2vw;
 	font-weight: 700;
+	align-items: baseline;
+	position: fixed;
+	left: 65%;
+	top: 88vh;
+	width: 30%;
+	background-color: hsla(0, 0%, 15%, 0.4);
 }
+
+.nav-wrapper a {
+	margin-top: 1vw;
+}
+
+.nav-wrapper a:hover {
+	text-decoration: underline	solid hsl(0, 0%, 93%);
+}
+
+@media (max-width: 900px) {
+	.active {
+		visibility: visible;
+		width:40vw;
+	}
+
+	.nav-wrapper {
+		font-size: 3vw;
+	}
+
+	.sign__text {
+		font-size: 750%;
+		hyphens: manual;
+	}
+
+	.sign--mini-text {
+		font-size: 300%;
+	}
+
+	.menu__open {
+		font-size: 4vw;
+	}
+
+	.logo--mini {
+		margin-left: 6vw;
+		font-size: 3vw;
+	}
+
+	main {
+		margin-left: 6vw;
+		margin-right: 6vw;
+		width: auto;
+	}
+
+  }
 
 @media (max-width: 600px) {
 	.active {
@@ -271,6 +347,7 @@ nav a .sign {
 		margin-left: 2vw;
 		margin-right: 2vw;
 		width: auto;
+		margin-bottom: 14vw;
 	}
 
 	.main__text {
@@ -279,30 +356,47 @@ nav a .sign {
 	}
 
 	.sign__text{
-		font-size: 300%;
+		font-size: 700%;
+		hyphens: manual;
 	}
 
-	.sign {
-		margin-bottom: 140vw;
+	.sign--mini-text {
+		font-size: 200%;
+	}
+
+	main .sign {
+		margin-bottom: 110vw;
 		margin-top: 6vw;
+		margin-left: -4vw;
+		margin-right: -4vw;
+	}
+
+	.menu__open {
+		font-size: 7vw;
+		left: 7vw;
+		background-color: hsla(0, 0%, 15%, 0.4);
+	}
+
+	.menu__close {
+		font-size: 6vw;
 	}
 
 	.logo--mini {
 		font-size: 6vw;
+		margin-left: 32vw;
+	}
+
+	.logo--starter {
+		font-size: 6vw;
+	}
+
+	.nav-wrapper {
+
+		font-size: 4.5vw;
+		left: 0%;
+		top: 91%;
+		width: 100%;
 	}
 
   }
 
-@media (min-width: 900px) {
-	.active {
-		visibility: visible;
-		width:20vw;
-	}
-
-	main {
-		margin-left: 8vw;
-		margin-right: 8vw;
-		width: auto;
-	}
-
-  }
