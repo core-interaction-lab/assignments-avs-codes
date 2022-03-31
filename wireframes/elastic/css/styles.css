@@ -1,0 +1,64 @@
+section {
+    background-color: lightsalmon;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 134px;
+    background-color: aquamarine;
+}
+
+.start-button  {
+    background-color: rgb(255, 127, 255);
+    padding: 50px;
+}
+
+p {
+    background-color: aquamarine;
+    font-size: 20px;
+    padding: 30px;
+}
+
+.logo-mini {
+    font-size: 24px;
+    align-self: start;
+}
+
+main {
+    background-color: lightsalmon;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+#higher-lower {
+    background-color: darkseagreen;
+    height: 50vw;
+    width: 95%;
+}
+
+#bear-1 {
+    width: 48%;
+    height: 100%;
+    background-color: darkolivegreen;
+}
+
+#bear-2 {
+    width: 48%;
+    height: 100%;
+    background-color: darkolivegreen;
+}
+
+#cheerleader {
+    position: fixed;
+    top: 44%;
+    left: 43.5%;
+    background-color: darkmagenta;
+    width: 13%;
+    height: 12%;
+}
