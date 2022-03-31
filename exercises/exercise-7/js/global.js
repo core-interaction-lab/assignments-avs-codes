@@ -16,8 +16,8 @@ const fetchMovies = async () => {
         titleEl.innerHTML = movie.fields.Title;
         releaseDateEl.innerHTML = movie.fields.release_date;
         genreEl.innerHTML = movie.fields.Genre;
-        imdbUrlEl.innerHTML = "IMDBPage";
-
+        imdbUrlEl.innerHTML = "IMDB Page";
+        imdbUrlEl.classList.add('imdb-link');
 
         articleEl.append(titleEl, releaseDateEl, genreEl, imdbUrlEl);
 
@@ -26,6 +26,22 @@ const fetchMovies = async () => {
         moviesContainer.appendChild(articleEl);
 
     });
+
+    const linkTags = document.querySelectorAll('.imdb-link');
+    linkTags.forEach((link) => {
+        const linkColor = link.style.color;
+
+        link.id = `my-link-${index}`;
+
+        link.addEventListener('mouseover', evt => {
+            link.style.color = 'cornflowerblue';            
+        });
+
+        link.addEventListener('mouseout', evt => {
+            link.style.color = linkColor;
+        });
+    });
+
 };
 
 fetchMovies();
