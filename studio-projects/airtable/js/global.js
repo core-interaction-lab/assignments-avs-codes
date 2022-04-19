@@ -24,19 +24,26 @@ const fetchFoods = async () => {
     const bearOneDesc = document.getElementById('bear-1-info');
     const bearTwoDesc = document.getElementById('bear-2-info');
 
+    const bearOnePrice = document.getElementById('bear-1-price');
+    const bearTwoPrice = document.getElementById('bear-2-price');
+
     const cheerleader = document.getElementById('cheerleader');
 
+    const message = document.getElementById('message');
+
     function renderGame () {
-        bearOneContainer.classList.remove('green-overlay');
-        bearOneContainer.classList.remove('red-overlay');
-        bearTwoContainer.classList.remove('green-overlay');
-        bearTwoContainer.classList.remove('red-overlay');
+        bearOneImgEl.style.mixBlendMode = 'normal';
+        bearOneImgEl.style.opacity = '1';
+        bearTwoImgEl.style.mixBlendMode = 'normal';
+        bearTwoImgEl.style.opacity = '1';
+        bearOneContainer.style.backgroundColor = 'rgb(255, 255, 255)';
+        bearTwoContainer.style.backgroundColor = 'rgb(255, 255, 255)';
 
         cheerleader.removeEventListener('click', function() {
             renderGame();
         });
         
-        cheerleader.innerHTML = '';
+        message.innerHTML = 'Now which bear has that $$$?'
 
         var randomBearOne = filteredRecords[Math.floor(Math.random()*filteredRecords.length)];
         var randomBearTwo = filteredRecords[Math.floor(Math.random()*filteredRecords.length)];
@@ -55,16 +62,23 @@ const fetchFoods = async () => {
         bearOneDesc.style.visibility = 'hidden';
         bearTwoDesc.style.visibility = 'hidden';
 
+        bearOnePrice.innerHTML = `$${randomBearOne.fields.price}`;
+        bearTwoPrice.innerHTML = `$${randomBearTwo.fields.price}`;
+
+        bearOnePrice.style.opacity = '0';
+        bearTwoPrice.style.opacity = '0';
+
+
         bearOneContainer.addEventListener('click', function() {
-            compare(randomBearOne, randomBearTwo, bearOneContainer, bearTwoContainer);
+            compare(randomBearOne, randomBearTwo, bearOneContainer, bearTwoContainer, bearOneImgEl, bearTwoImgEl);
         });
     
         bearTwoContainer.addEventListener('click', function() {
-            compare(randomBearTwo, randomBearOne, bearTwoContainer, bearOneContainer);
+            compare(randomBearTwo, randomBearOne, bearTwoContainer, bearOneContainer, bearTwoImgEl, bearOneImgEl);
         });
     };
 
-    const compare = (chosenBear, otherBear, chosenContainer, otherContainer) => {
+    const compare = (chosenBear, otherBear, chosenContainer, otherContainer, chosenImg, otherImg) => {
         var chosenNoComma = chosenBear.fields.price.replace(',', '');
         var otherNoComma = otherBear.fields.price.replace(',', '');
         var chosenInt = parseInt(chosenNoComma);
@@ -72,13 +86,13 @@ const fetchFoods = async () => {
         console.log(chosenInt);
         console.log(otherInt);
         if (chosenInt > otherInt) {
-            judgement(chosenContainer, otherContainer);
+            judgement(chosenContainer, otherContainer, chosenImg, otherImg);
             console.log('correct')
-            cheerleader.innerHTML = 'You got that!';
+            message.innerHTML = 'You got that!';
         } else {
-            judgement(otherContainer, chosenContainer)
+            judgement(otherContainer, chosenContainer, otherImg, chosenImg)
             console.log('incorrect');
-            cheerleader.innerHTML = 'You suck at life.';
+            message.innerHTML = 'Dang! Maybe next time!';
         }
     };
 
@@ -88,12 +102,19 @@ const fetchFoods = async () => {
      
     //}
 
-    function judgement (correctContainer, incorrectContainer) {
+    function judgement (correctContainer, incorrectContainer, correctImg, incorrectImg) {
+        console.log(correctContainer, incorrectContainer, correctImg, incorrectImg);
         bearOneDesc.style.visibility = 'visible';
         bearTwoDesc.style.visibility = 'visible';
 
-        correctContainer.classList.add('green-overlay');
-        incorrectContainer.classList.add('red-overlay');
+        correctContainer.style.backgroundColor = 'rgba(61, 126, 80, 0.555)'
+        incorrectContainer.style.backgroundColor = 'rgba(165, 52, 52, 0.555)'
+        correctImg.style.mixBlendMode = 'multiply';
+        correctImg.style.opacity = '0.25';
+        incorrectImg.style.mixBlendMode = 'multiply';
+        incorrectImg.style.opacity = '0.25';
+        bearOnePrice.style.opacity = '1';
+        bearTwoPrice.style.opacity = '1';
         console.log(correctContainer);
         cheerleader.addEventListener('click', function() {
             renderGame();
