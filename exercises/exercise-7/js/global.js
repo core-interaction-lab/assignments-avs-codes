@@ -19,7 +19,7 @@ const fetchMovies = async () => {
         imdbUrlEl.innerHTML = "IMDB Page";
         imdbUrlEl.classList.add('imdb-link');
 
-        articleEl.append(titleEl, releaseDateEl, genreEl, imdbUrlEl);
+        articleEl.append(titleEl, releaseDateEl, genreEl, imdbUrlEl, posterl);
 
         imdbUrlEl.href = movie.fields.imdb_url;
 
