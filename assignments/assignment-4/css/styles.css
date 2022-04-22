@@ -1,5 +1,18 @@
+ body {
+     background-color: rgb(24, 14, 14);
+     color: rgb(254, 238, 238);
+ }
+
+ h1 {
+    font-family: battery-park, sans-serif;
+    text-align: center;
+    font-size: 4vw;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+ }
+
 #story-modal {
-        display: none;
+        visibility: hidden;
         position: fixed;
         z-index: 1;
         left: 0;
@@ -8,16 +21,49 @@
         height: 100%;
         overflow: auto;
         background-color: rgba(0,0,0,0.4);
+        cursor: pointer;
 }
 
 #modal-content {
     background-color: #fefefe;
+    color: black;
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
+    font-family: prestige-elite-std, monospace;
+    cursor: default;
   }
 
-  #story-text {
-      white-space: pre-wrap;
-  }
+#story-text {
+    font-size: 10pt;
+}
+
+#story-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 30vw;
+    height: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.story-btn {
+    width: 5vw;
+    height: 5vw;
+    line-height: 5vw;
+    margin: .75vw .75vw;
+    padding: .75vw .75vw;
+    background-color: rgb(254, 238, 238);
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    font-family: battery-park, sans-serif;
+    font-size: 200%;
+}
+
+.story-btn:hover {
+    background-color: rgb(143, 137, 137);
+    color: rgb(113, 13, 13);
+}

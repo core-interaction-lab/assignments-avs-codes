@@ -28,75 +28,94 @@ const fetchStories = async () => {
         storyTitle.innerHTML = '';
         storyText.innerHTML ='';
 
-        var originalText = storiesArray[story].data.selftext;
-
-
+        var originalText = storiesArray[story].data.selftext_html;
     
-        storyText.innerHTML = originalText;
+        storyText.innerHTML = htmlDecode(originalText);
     
         storyTitle.innerHTML = storiesArray[story].data.title;
     };
 
     story1.addEventListener('click', function() {
+
         buildStory(0);
         revealModal();
+        resetModalScroll();
     });
 
     story2.addEventListener('click', function() {
         buildStory(1);
         revealModal();
+        resetModalScroll();
     });
     
     story3.addEventListener('click', function() {
         buildStory(2);
         revealModal();
+        resetModalScroll();
     });
 
     story4.addEventListener('click', function() {
         buildStory(3);
         revealModal();
+        resetModalScroll();
     });
 
     story5.addEventListener('click', function() {
         buildStory(4);
         revealModal();
+        resetModalScroll();
     });
 
     story6.addEventListener('click', function() {
         buildStory(5);
         revealModal();
+        resetModalScroll();
     });
 
     story7.addEventListener('click', function() {
         buildStory(6);
         revealModal();
+        resetModalScroll();
     });
 
     story8.addEventListener('click', function() {
         buildStory(7);
         revealModal();
+        resetModalScroll();
     });
 
     story9.addEventListener('click', function() {
         buildStory(8);
         revealModal();
+        resetModalScroll();
     });
 
     story10.addEventListener('click', function() {
         buildStory(9);
         revealModal();
+        resetModalScroll();
     });
     
 };
 
 window.onclick = function(event) {
     if (event.target == storyModal) {
-      storyModal.style.display = "none";
+      storyModal.style.visibility = "hidden";
     }
   };
 
 const revealModal = () => {
-    storyModal.style.display = "block";
+    storyModal.style.visibility = "visible";
+}
+
+const resetModalScroll = () => {
+    storyModal.scrollTo(0,0);
+}
+
+const htmlDecode = (text) => {
+    const e = document.createElement('div');
+    e.innerHTML = text;
+    return e.innerText;
 }
 
 fetchStories();
