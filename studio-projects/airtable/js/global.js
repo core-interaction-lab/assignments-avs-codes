@@ -29,15 +29,21 @@ const fetchFoods = async () => {
 
     const cheerleader = document.getElementById('cheerleader');
 
+    const refreshBtn = document.getElementById('refresh');
+
     const message = document.getElementById('message');
 
     function renderGame () {
+        refreshBtn.style.visibility = 'hidden';
         bearOneImgEl.style.mixBlendMode = 'normal';
         bearOneImgEl.style.opacity = '1';
         bearTwoImgEl.style.mixBlendMode = 'normal';
         bearTwoImgEl.style.opacity = '1';
         bearOneContainer.style.backgroundColor = 'rgb(255, 255, 255)';
         bearTwoContainer.style.backgroundColor = 'rgb(255, 255, 255)';
+
+        bearOneContainer.style.cursor = 'pointer';
+        bearTwoContainer.style.cursor = 'pointer';
 
         cheerleader.removeEventListener('click', function() {
             renderGame();
@@ -96,14 +102,10 @@ const fetchFoods = async () => {
         }
     };
 
-    //reset = () => {
-    //    var randomBearOne = filteredRecords[Math.floor(Math.random()*filteredRecords.length)];
-    //    var randomBearTwo = filteredRecords[Math.floor(Math.random()*filteredRecords.length)];
-     
-    //}
-
     function judgement (correctContainer, incorrectContainer, correctImg, incorrectImg) {
         console.log(correctContainer, incorrectContainer, correctImg, incorrectImg);
+        bearOneContainer.style.cursor = 'default';
+        bearTwoContainer.style.cursor = 'default';
         bearOneDesc.style.visibility = 'visible';
         bearTwoDesc.style.visibility = 'visible';
 
@@ -116,9 +118,10 @@ const fetchFoods = async () => {
         bearOnePrice.style.opacity = '1';
         bearTwoPrice.style.opacity = '1';
         console.log(correctContainer);
-        cheerleader.addEventListener('click', function() {
+        refreshBtn.addEventListener('click', function() {
             renderGame();
         })
+        refreshBtn.style.visibility = 'visible';
     };
 
 
